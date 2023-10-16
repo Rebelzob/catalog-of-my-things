@@ -1,14 +1,28 @@
 require 'securerandom'
 
 class Item
-  def initialize(_id, genre, author, source, label, publish_date, archived)
+  attr_reader :id, :publish_date, :archived, :label, :genre, :author, :source
+
+  def initialize(_id, publish_date, archived)
     @id = SecureRandom.hex(10)
-    @genre = genre
-    @author = author
-    @source = source
-    @label = label
     @publish_date = publish_date
     @archived = archived
+  end
+
+  def add_label(label)
+    @label = label
+  end
+
+  def add_genre(genre)
+    @genre = genre
+  end
+
+  def add_author(author)
+    @author = author
+  end
+
+  def add_source(source)
+    @source = source
   end
 
   def move_to_archive
