@@ -1,6 +1,9 @@
-def source_data
-  print "Add a source name: "
-  name = gets.chomp
+module SourceData
 
-  source_data = { name }
+  def source_data
+    print "Add a source name: "
+    name = gets.chomp
+
+    source_data = { name }
+  end
 end

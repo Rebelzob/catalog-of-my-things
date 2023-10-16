@@ -1,9 +1,12 @@
-def label_data
-  print "Add a label title: "
-  title = gets.chomp
+module LabelData
 
-  print "Add a label color: "
-  color = gets.chomp
+  def label_data
+    print "Add a label title: "
+    title = gets.chomp
 
-  label_data = { title, color }
+    print "Add a label color: "
+    color = gets.chomp
+
+    label_data = { title, color }
+  end
 end
