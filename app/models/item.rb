@@ -1,7 +1,7 @@
 require 'securerandom'
 
 class Item
-  def initialize (id, genre, author, source, label, publish_date, archived)
+  def initialize(_id, genre, author, source, label, publish_date, archived)
     @id = SecureRandom.hex(10)
     @genre = genre
     @author = author
@@ -16,6 +16,7 @@ class Item
   end
 
   private
+
   def can_be_archived?
     !@archived
   end
