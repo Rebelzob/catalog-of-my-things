@@ -7,6 +7,6 @@ module LabelData
     print "Add a label color: "
     color = gets.chomp
 
-    label_data = { title, color }
+    label_data = { title: title, color: color }
   end
 end

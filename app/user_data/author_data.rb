@@ -7,6 +7,6 @@ module AuthorData
     print "Add the author's last name: "
     last_name = gets.chomp
 
-    author_data = { first_name, last_name }
+    author_data = { first_name: first_name, last_name: last_name }
   end
 end
