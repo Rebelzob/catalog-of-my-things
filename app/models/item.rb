@@ -26,12 +26,12 @@ class Item
   end
 
   def move_to_archive
-    @archived = true if can_be_archived? 
+    @archived = true if can_be_archived?
   end
 
   private
 
   def can_be_archived?
-    return @publish_date > 10
+    @publish_date > 10
   end
 end
