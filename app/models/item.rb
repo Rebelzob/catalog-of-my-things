@@ -32,6 +32,6 @@ class Item
   private
 
   def can_be_archived?
-    @publish_date > 10
+    Time.now.year - publish_date > 10
   end
 end
