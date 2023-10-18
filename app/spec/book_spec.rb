@@ -1,4 +1,4 @@
-require_relative '../models/book'
+require_relative '../models/book/book'
 
 RSpec.describe Book do
   describe '#initialize' do
