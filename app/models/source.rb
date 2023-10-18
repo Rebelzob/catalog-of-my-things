@@ -9,7 +9,7 @@ class Source
 
   @sources = []
 
-  def initialize(id, name, items)
+  def initialize(_id, name, items)
     @id = SecureRandom.hex(10)
     @name = name
     @items = items
@@ -22,7 +22,7 @@ class Source
   end
 
   def self.list_all_sources
-    @sources.each_with_index { |source, index| puts "#{index} - #{source.name}, ID: #{source.id}"}
+    @sources.each_with_index { |source, index| puts "#{index} - #{source.name}, ID: #{source.id}" }
   end
 
   def self.find_source_by_index(index)

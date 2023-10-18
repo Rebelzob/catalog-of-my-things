@@ -8,17 +8,12 @@ class Movie < Item
 
   @movies = []
 
-  def initialize(name, genre, author, source, label, publish_date, archived, silent)
-    super(name, genre, author, source, label, publish_date, archived)
+  def initialize(silent, *args)
+    super(*args)
     @silent = silent
   end
 
   def self.add_a_movie(movie_data)
-    movie_data = ItemData.collect_movie_data
-    movie_data[:author] = author
-    movie_data[:genre] = genre
-    movie_data[:label] = label
-    movie_data[:source] = source
     movie = Movie.new(movie_data)
 
     @movies << movie
@@ -35,6 +30,6 @@ class Movie < Item
   private
 
   def can_be_archived?
-    return true if super.can_be_archived? || silent == true
+    true if super.can_be_archived? || silent == true
   end
 end
