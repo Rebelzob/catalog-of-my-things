@@ -28,5 +28,5 @@ class App
     puts 'welcome'
     list_of_games
     list_of_authors
-  end  
+  end
 end
