@@ -18,10 +18,14 @@ class Genre
   end
 
   def add_genre
-    @genre_list.push(self)
+    self.class.genre_list << self
   end
 
-  def list_all_genres
+  class << self
+    attr_reader :genre_list
+  end
+
+  def self.list_all_genres
     @genre_list.each_with_index { |genre, index| p "#{index} - #{genre.name}" }
   end
 end
