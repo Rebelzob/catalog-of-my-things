@@ -13,7 +13,6 @@ class App
   # include ItemData
   include Options
 
-
   def initialize
     # collect_item_data
     # source_data
