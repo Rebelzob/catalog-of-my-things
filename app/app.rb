@@ -2,13 +2,14 @@ require_relative 'user_data/author_data'
 require_relative 'user_data/genre_data'
 require_relative 'user_data/label_data'
 require_relative 'models/game/options'
-# require_relative 'user_data/source_data'
+require_relative 'models/display_methods'
 # require_relative 'user_data/item_data'
 
 class App
   include AuthorData
   include GenreData
   include LabelData
+  include Display
   # include SourceData
   # include ItemData
   include Options
@@ -17,8 +18,8 @@ class App
     # collect_item_data
     # source_data
     # author_data
-    # genre_data
-    # label_data
+    @labels = []
+    @books = []
     @games = []
     @authors = []
   end
