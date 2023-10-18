@@ -11,12 +11,20 @@ class MusicAlbum < Item
   end
 
   def add_music_album
-    @music_list.push(self)
+    self.class.music_list << self
   end
 
-  def list_all_music_albums
+  class << self
+    attr_reader :music_list
+  end
+
+  def self.list_all_music_albums
     @music_list.each_with_index do |music, index|
-      p "#{index} - [#{self.class.name}], #{music.author}, #{music.label}, #{music.source.name}, #{music.publish_date}"
+      author_name = music.author.first_name
+      label_title = music.label.title
+      source_name = music.source.name
+      pub_date = music.publish_date
+      p "#{index} - [#{name}], #{author_name}, #{label_title}, #{source_name}, #{pub_date}"
     end
   end
 
