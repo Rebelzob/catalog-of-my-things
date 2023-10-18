@@ -21,9 +21,9 @@ describe Author do
       it 'should add the current item to items' do
         item = double('item')
         expect(item).to receive(:author=).with(author)
-        
+
         author.add_item(item)
-        
+
         expect(author.items).to include(item)
       end
     end
