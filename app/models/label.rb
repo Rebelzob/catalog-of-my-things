@@ -4,7 +4,7 @@ class Label
   attr_accessor :title, :color
   attr_reader :id, :items
 
-  def initialize(_id, title, color, _items)
+  def initialize(title, color)
     @id = SecureRandom.hex(10)
     @title = title
     @color = color
