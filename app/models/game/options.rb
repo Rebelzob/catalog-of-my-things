@@ -1,4 +1,5 @@
 require_relative 'game'
+require_relative 'author'
 
 module Options
   def list_of_games
@@ -17,7 +18,7 @@ module Options
       puts 'No Authors available to display'
     else
       @authors.each_with_index do |author, index|
-        puts "#{index}) Firs Name: #{author.first_name}, Last Name: #{author.last_name} ID: #{author.id}"
+        puts "#{index}) First Name: #{author.first_name}, Last Name: #{author.last_name} ID: #{author.id}"
       end
     end
   end
@@ -31,6 +32,17 @@ module Options
     date_publish = gets.chomp
     game = Game.new(multiplayer, last_played, date_publish)
     @games << game
+    author = add_author_game
+    game.add_author(author)
+    @authors << author
     puts 'Game created successfully'
   end
+
+  def add_author_game
+    puts 'Please enter the first name of the author:'
+    first_name = gets.chomp
+    puts 'Please enter the last name of the author'
+    last_name = gets.chomp
+    Author.new(first_name, last_name)
+  end  
 end
