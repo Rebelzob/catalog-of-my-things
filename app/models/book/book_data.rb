@@ -2,6 +2,8 @@ require 'json'
 
 module BookLabelData
   def save_books(books)
+    return if books.empty?
+
     File.open('app/database/books.json', 'w') do |file|
       file.puts books.map { |book|
         {

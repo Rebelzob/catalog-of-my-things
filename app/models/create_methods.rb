@@ -9,7 +9,7 @@ module Create
     publish_date = gets.chomp
     puts 'Enter the book cover state'
     cover_state = gets.chomp
-    book = Book.new(publisher, cover_state, publish_date)
+    book = Book.new(cover_state, publisher, publish_date)
     @books << book
     sleep(1)
     puts 'Book created successfully'
