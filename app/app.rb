@@ -29,8 +29,8 @@ class App
     # collect_item_data
     # source_data
     # genre_data
-    @labels = load_labels
-    @books = load_books
+    @labels = load_labels || []
+    @books = load_books || []
     @games = load_games
     @authors = load_authors
     display_menu
@@ -84,8 +84,8 @@ class App
   def handle_exit
     save_authors
     save_games
-    save_books
-    save_labels
+    save_books(@books)
+    save_labels(@labels)
     puts 'Thank you for using this app!'
   end
 
