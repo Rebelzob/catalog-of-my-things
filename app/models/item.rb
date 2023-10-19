@@ -3,8 +3,13 @@ require 'securerandom'
 class Item
   attr_reader :id, :publish_date, :archived, :label, :genre, :author, :source
 
-  def initialize(_id, publish_date, archived)
+  def initialize(_params = {})
     @id = SecureRandom.hex(10)
+    @title = title
+    @author = author
+    @genre = genre
+    @label = label
+    @source = source
     @publish_date = publish_date
     @archived = archived
   end
