@@ -2,6 +2,8 @@ require_relative '../../models/movie'
 require_relative '../../models/source'
 require_relative '../../user_data/collect_movie_data'
 require_relative '../../user_data/source_data'
+require_relative '../../database/movie/save_data'
+require_relative '../../database/source/save_data'
 
 class Main
   def main
@@ -19,11 +21,8 @@ class Main
         movie_data = collect_movie_data
         Movie.add_a_movie(movie_data[:title], movie_data[:source], movie_data[:publish_date], movie_data[:archived],
                           movie_data[:silent])
-        # Add save here
+        save_data(movie_data, 'data/movie_data.json')
       when '4'
-        Source.add_a_source(source_data)
-        # Add save here
-      when '5'
         exit
       else
         puts 'Invalid choice. Please try again.'
@@ -37,8 +36,7 @@ def options
   puts '1 - List all movies'
   puts '2 - List all sources'
   puts '3 - Add a movie'
-  puts '4 - Add a source'
-  puts '5 - Exit'
+  puts '4 - Exit'
   print 'Enter your choice: '
 end
 
