@@ -4,7 +4,6 @@ module LoadGameAuthor
   GAME_PATH = 'app/database/game_json.json'.freeze
   AUTHOR_PATH = 'app/database/author_json.json'.freeze
 
-
   def load_games
     return [] unless File.exist?(GAME_PATH)
 
