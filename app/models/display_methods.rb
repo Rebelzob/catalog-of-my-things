@@ -4,7 +4,8 @@ module Display
       puts 'No books available to display'
     else
       @books.each.with_index do |book, index|
-        puts "#{index}) ID: #{book.id} published by #{book.publisher} on #{book.publish_date} with cover state: #{book.cover_state}"
+        puts "#{index}) ID: #{book.id} published by #{book.publisher} on
+        #{book.publish_date} with cover state: #{book.cover_state}"
       end
     end
   end
