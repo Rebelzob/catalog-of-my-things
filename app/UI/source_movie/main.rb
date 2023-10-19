@@ -19,8 +19,7 @@ class Main
         Source.list_all_sources
       when '3'
         movie_data = collect_movie_data
-        Movie.add_a_movie(movie_data[:title], movie_data[:source], movie_data[:publish_date], movie_data[:archived],
-                          movie_data[:silent])
+        movie_data.add_a_movie
         save_data(movie_data, 'data/movie_data.json')
       when '4'
         exit

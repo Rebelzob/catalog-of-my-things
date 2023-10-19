@@ -8,20 +8,23 @@ class Movie < Item
 
   @movies = []
 
-  def initialize(_title, _source, _publish_date, _archived, silent)
-    super()
+  def initialize(publish_date, silent)
+    super(publish_date)
     @silent = silent
   end
 
-  def self.add_a_movie(title, source, publish_date, archived, silent)
-    movie = Movie.new(title, source, publish_date, archived, silent)
-    @movies << movie
+  def add_a_movie
+    self.class.movies << self
 
-    if movie.nil?
+    if nil?
       puts 'Invalid movie data. Make sure all required attributes are provided.'
     else
-      puts "Movie '#{title}' added successfully. \n\n"
+      puts "Movie added successfully. \n\n"
     end
+  end
+
+  class << self
+    attr_reader :movies
   end
 
   def self.list_all_movies

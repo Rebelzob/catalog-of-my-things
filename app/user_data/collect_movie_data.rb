@@ -1,6 +1,6 @@
 def collect_movie_data
   print 'Add a title: '
-  title = gets.chomp
+  gets.chomp
 
   # print 'Select a genre: '
   # Genre.list_all_genres
@@ -15,7 +15,7 @@ def collect_movie_data
   print 'Select a source: '
   Source.list_all_sources
   index = gets.chomp.to_i
-  source = Source.find_source_by_index(index)
+  Source.find_source_by_index(index)
 
   # print 'Select a label: '
   # Label.list_all_labels
@@ -27,10 +27,10 @@ def collect_movie_data
 
   print 'Add a archived (y/n): '
   archived_input = gets.chomp.downcase
-  archived = %w[true false].include?(archived_input)
+  %w[true false].include?(archived_input)
 
   print 'Silent (y/n): '
   silent = gets.chomp.downcase == 'y'
 
-  { title: title, source: source, publish_date: publish_date, archived: archived, silent: silent }
+  Movie.new(publish_date, silent)
 end
