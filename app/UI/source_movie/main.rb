@@ -19,8 +19,10 @@ class Main
         movie_data = collect_movie_data
         Movie.add_a_movie(movie_data[:title], movie_data[:source], movie_data[:publish_date], movie_data[:archived],
                           movie_data[:silent])
+        # Add save here
       when '4'
         Source.add_a_source(source_data)
+        # Add save here
       when '5'
         exit
       else

@@ -28,8 +28,8 @@ class Movie < Item
       puts "#{index + 1} - #{movie.title}, #{movie.label}, ID:#{movie.id}"
     end
 
-    if movie.empty?
-      puts 'The movie list is emplty'
+    if @movies.empty?
+      puts 'The movie list is empty'
     else
       puts "We have Movie '#{@movies.length}' movies. \n\n"
       puts movie_list

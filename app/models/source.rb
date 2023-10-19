@@ -26,7 +26,16 @@ class Source
   end
 
   def self.list_all_sources
-    @sources.each_with_index { |source, index| puts "#{index + 1} - #{source.name}, ID: #{source.id}" }
+    source_list = @sources.each_with_index do |source, index|
+      puts "#{index + 1} - #{source.name}, ID: #{source.id}"
+    end
+
+    if @sources.empty?
+      puts 'The source list is empty'
+    else
+      puts "We have Movie '#{@sources.length}' movies. \n\n"
+      puts source_list
+    end
   end
 
   def self.find_source_by_index(index)
