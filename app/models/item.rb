@@ -6,8 +6,7 @@ class Item
 
 
   def initialize(_params = {})
-
-  # def initialize(publish_date)
+    # def initialize(publish_date)
 
     @id = SecureRandom.hex(10)
     @title = title
