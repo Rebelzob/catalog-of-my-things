@@ -24,8 +24,10 @@ class Movie < Item
   end
 
   def self.list_all_movies
-    movie_list = @movies.each_with_index { |movie, index| puts "#{index + 1} - #{movie.title}, #{movie.label}, ID:#{movie.id}" }
-    
+    movie_list = @movies.each_with_index do |movie, index|
+      puts "#{index + 1} - #{movie.title}, #{movie.label}, ID:#{movie.id}"
+    end
+
     if movie.empty?
       puts 'The movie list is emplty'
     else
