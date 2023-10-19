@@ -16,11 +16,14 @@ module BookLabelData
   end
 
   def save_labels(labels)
-    File.open('app/database/labels.json', 'w') do |file|
+    return if labels.empty?
+
+    File.open('app/database/labels.json', 'a') do |file|
       file.puts labels.map { |label|
         {
           'id' => label.id,
-          'name' => label.name,
+          'title' => label.title,
+          'color' => label.color,
         }
       }.to_json
     end
@@ -50,7 +53,7 @@ module BookLabelData
     labels = []
     JSON.parse(File.read('app/database/labels.json')).each do |label|
       labels << Label.new(
-        label['name'],
+        label['title'],
       )
     end
     labels
