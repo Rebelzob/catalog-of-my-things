@@ -4,15 +4,8 @@ require 'date'
 class Item
   attr_reader :id, :publish_date, :archived, :label, :genre, :author, :source
 
-  def initialize(_params = {})
-    # def initialize(publish_date)
-
+  def initialize(publish_date)
     @id = SecureRandom.hex(10)
-    @title = title
-    @author = author
-    @genre = genre
-    @label = label
-    @source = source
     @publish_date = publish_date
     @archived = archived
   end
