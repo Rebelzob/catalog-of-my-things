@@ -8,7 +8,7 @@ module BookLabelData
           'id' => book.id,
           'publisher' => book.publisher,
           'publish_date' => book.publish_date,
-          'cover_state' => book.cover_state,
+          'cover_state' => book.cover_state
         }
       }.to_json
     end
@@ -18,12 +18,12 @@ module BookLabelData
   def save_labels(labels)
     return if labels.empty?
 
-    File.open('app/database/labels.json', 'a') do |file|
+    File.open('app/database/labels.json', 'w') do |file|
       file.puts labels.map { |label|
         {
           'id' => label.id,
           'title' => label.title,
-          'color' => label.color,
+          'color' => label.color
         }
       }.to_json
     end
@@ -38,11 +38,10 @@ module BookLabelData
       books << Book.new(
         book['publisher'],
         book['publish_date'],
-        book['cover_state'],
+        book['cover_state']
       )
     end
     books
-
   rescue StandardError => e
     puts "Error loading Books: #{e.message}"
   end
@@ -54,10 +53,10 @@ module BookLabelData
     JSON.parse(File.read('app/database/labels.json')).each do |label|
       labels << Label.new(
         label['title'],
+        label['color']
       )
     end
     labels
-
   rescue StandardError => e
     puts "Error loading Books: #{e.message}"
   end

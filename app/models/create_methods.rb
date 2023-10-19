@@ -1,5 +1,5 @@
 require_relative 'book/book'
-require_relative './label'
+require_relative 'label'
 
 module Create
   def menu_create_book

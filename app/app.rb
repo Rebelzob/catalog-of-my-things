@@ -8,7 +8,6 @@ require_relative 'models/game/author'
 require_relative 'models/display_methods'
 require_relative 'models/book/book_data'
 require_relative 'models/create_methods'
-require_relative 'models/display_methods'
 
 # require_relative 'user_data/source_data'
 
