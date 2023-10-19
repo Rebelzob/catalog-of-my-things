@@ -1,4 +1,5 @@
 require_relative 'book/book'
+require_relative './label'
 
 module Create
   def menu_create_book
@@ -16,10 +17,11 @@ module Create
 
   def menu_create_label
     puts 'Enter the label name'
-    name = gets.chomp
+    title = gets.chomp
     puts 'Enter color of the label'
     color = gets.chomp
-    @labels << Label.new(name, color)
+    label = Label.new(title, color)
+    @labels << label
     sleep(1)
     puts 'Label created successfully'
   end
