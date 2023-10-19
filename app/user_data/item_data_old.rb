@@ -48,7 +48,7 @@ module ItemData
   end
 
   def collect_movie_data
-    movie_data = collect_item_data('movie')
+    movie_data = collect_item_data
 
     print 'Silent (y/n): '
     movie_data[:silent] = gets.chomp.downcase == 'y'
