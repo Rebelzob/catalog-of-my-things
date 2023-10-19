@@ -1,26 +1,30 @@
-require_relative '../user_data/item_data'
+require_relative 'item'
+require_relative '../user_data/collect_movie_data'
 
 class Movie < Item
   attr_reader :id
-  attr_accessor :name, :genre, :author, :source, :label, :publish_date, :archived, :silent
-
-  include ItemData
+  attr_accessor :title, :genre, :author, :source, :label, :publish_date, :archived, :silent
 
   @movies = []
 
-  def initialize(silent, *args)
-    super(*args)
+  def initialize(title, source, publish_date, archived, silent)
+    super()
     @silent = silent
   end
 
-  def self.add_a_movie(movie_data)
-    movie = Movie.new(movie_data)
-
+  def self.add_a_movie(title, source, publish_date, archived, silent)
+    movie = Movie.new(title, source, publish_date, archived, silent)
     @movies << movie
+
+    if movie.nil?
+      puts 'Invalid movie data. Make sure all required attributes are provided.'
+    else
+      puts "Movie '#{title}' added successfully. \n\n"
+    end
   end
 
   def self.list_all_movies
-    @movies.each_with_index { |movie, index| puts "#{index} - #{movie.name}, #{movie.label}, ID:#{movie.id}" }
+    @movies.each_with_index { |movie, index| puts "#{index + 1} - #{movie.title}, #{movie.label}, ID:#{movie.id}" }
   end
 
   def self.find_movie_by_index(index)
