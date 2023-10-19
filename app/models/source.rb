@@ -1,5 +1,6 @@
 require 'securerandom'
 require_relative '../user_data/source_data'
+require_relative '../database/source/load_data'
 
 class Source
   attr_reader :id, :items
@@ -26,15 +27,16 @@ class Source
   end
 
   def self.list_all_sources
-    source_list = @sources.each_with_index do |source, index|
-      puts "#{index + 1} - #{source.name}, ID: #{source.id}"
-    end
-
-    if @sources.empty?
+    loaded_sources = load_data('data/source_data.json')
+    if loaded_sources.nil?
+      puts 'Failed to load movie data.'
+    elsif loaded_sources.empty?
       puts 'The source list is empty'
     else
-      puts "We have Movie '#{@sources.length}' movies. \n\n"
-      puts source_list
+      puts "We have #{loaded_sources.length} sources. \n"
+      loaded_sources.each_with_index do |source, index|
+        puts "#{index + 1} - #{source['name']}"
+      end
     end
   end
 
