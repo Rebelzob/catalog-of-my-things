@@ -1,5 +1,6 @@
 require_relative 'item'
 require_relative '../user_data/collect_movie_data'
+require_relative '../database/movie/load_data'
 
 class Movie < Item
   attr_reader :id
@@ -24,15 +25,16 @@ class Movie < Item
   end
 
   def self.list_all_movies
-    movie_list = @movies.each_with_index do |movie, index|
-      puts "#{index + 1} - #{movie.title}, #{movie.label}, ID:#{movie.id}"
-    end
-
-    if @movies.empty?
+    loaded_movies = load_data('data/movie_data.json')
+    if loaded_movies.nil?
+      puts 'Failed to load movie data.'
+    elsif loaded_movies.empty?
       puts 'The movie list is empty'
     else
-      puts "We have Movie '#{@movies.length}' movies. \n\n"
-      puts movie_list
+      puts "We have Movie '#{loaded_movies.length}' movies. \n"
+      loaded_movies.each_with_index do |movie, index|
+        puts "#{index + 1} - Title: #{movie['title']}, Pusbished on: #{movie['publish_date']}"
+      end
     end
   end
 
