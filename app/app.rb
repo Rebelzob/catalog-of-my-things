@@ -47,6 +47,7 @@ class App
   def option_list
     puts '1 - List all games'
     puts '2 - List all books'
+    puts '3 - List all music albums'
     puts '3 - List all authors'
     puts '4 - List all labels'
     puts '5 - Add a label'
