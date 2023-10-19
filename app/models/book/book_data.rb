@@ -38,9 +38,9 @@ module BookLabelData
     books = []
     JSON.parse(File.read('app/database/books.json')).each do |book|
       books << Book.new(
+        book['cover_state'],
         book['publisher'],
-        book['publish_date'],
-        book['cover_state']
+        book['publish_date']
       )
     end
     books
