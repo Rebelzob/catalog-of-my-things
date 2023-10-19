@@ -44,5 +44,5 @@ module Options
     puts 'Please enter the last name of the author'
     last_name = gets.chomp
     Author.new(first_name, last_name)
-  end  
+  end
 end

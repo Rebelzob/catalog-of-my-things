@@ -45,28 +45,28 @@ class App
     puts '4 - Exit'
   end
 
-  def run_app(option) 
+  def run_app(option)
     case option
     when 1
       list_of_games
-    when 2 
+    when 2
       list_of_authors
-    when 3 
+    when 3
       add_game
     when 4
       handle_exit
       sleep 1
       exit
     else
-    puts 'invalid option'
+      puts 'invalid option'
     end
-  end   
+  end
 
-def handle_exit
-  save_authors
-  save_games
-  puts 'Thank you for using this app!'
-end  
+  def handle_exit
+    save_authors
+    save_games
+    puts 'Thank you for using this app!'
+  end
 
   def init
     puts 'welcome'

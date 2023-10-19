@@ -1,11 +1,11 @@
 require 'securerandom'
 
 class Author
-  attr_accessor :first_name, :last_name, :id
-  attr_reader :items
+  attr_accessor :first_name, :last_name
+  attr_reader :items, :id
 
   def initialize(first_name, last_name)
-    @id = SecureRandom.uuid
+    @id = SecureRandom.hex(10)
     @first_name = first_name
     @last_name = last_name
     @items = []
