@@ -1,4 +1,4 @@
-require_relative '../models/music'
+require_relative '../models/music/music'
 require_relative '../models/game/author'
 require_relative '../models/label'
 require 'date'

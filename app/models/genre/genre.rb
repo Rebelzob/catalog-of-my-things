@@ -6,7 +6,7 @@ class Genre
 
   @genre_list = []
 
-  def initialize(_id, name)
+  def initialize(name)
     @id = SecureRandom.hex(10)
     @name = name
     @items = []
