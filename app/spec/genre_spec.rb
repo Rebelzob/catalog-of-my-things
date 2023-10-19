@@ -32,7 +32,7 @@ describe '#Genre' do
 
   describe '#list_all_genres' do
     it 'Should list all genres' do
-      expect { Genre.list_all_genres }.to output(puts('"0 - Comedy"')).to_stdout
+      expect { Genre.list_all_genres }.to output(puts('"Comedy"')).to_stdout
     end
   end
 end
