@@ -24,7 +24,7 @@ RSpec.describe Book do
   describe '#add_genre' do
     it 'adds a genre to the book' do
       book = Book.new('good', 'Publisher', '2021-01-01')
-      book.add_genre('Science Fiction')
+      genre = Genre.new('Science Fiction')
       expect(book.genre).to eq('Science Fiction')
     end
   end

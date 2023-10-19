@@ -22,7 +22,7 @@ describe '#MusicAlbum' do
       id = SecureRandom.hex(10)
       music = MusicAlbum.new(true, Date.parse('15-10-2023'))
       music.add_author(Author.new('Bruno', 'Kambere'))
-      music.add_label(Label.new(id, 'Dunot', 'Red', []))
+      music.add_label(Label.new('Dunot', 'Red'))
       music.add_source(double(id: id, name: 'Source', items: []))
       music.add_music_album
       output = puts('"0 - [MusicAlbum], Bruno, Dunot, Source, 2023-10-15"')

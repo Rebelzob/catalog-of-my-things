@@ -5,8 +5,8 @@ require 'securerandom'
 
 describe '#Genre' do
   id = SecureRandom.hex(10)
-  let(:new_genre) { Genre.new(id, 'Fantasy') }
-  let(:new_genre_item) { Genre.new(id, 'Comedy') }
+  let(:new_genre) { Genre.new('Fantasy') }
+  let(:new_genre_item) { Genre.new('Comedy') }
   describe 'Initialize Genre with correct data' do
     it 'Genre name should be Fantasy' do
       expect(new_genre.name).to eq('Fantasy')
@@ -32,7 +32,7 @@ describe '#Genre' do
 
   describe '#list_all_genres' do
     it 'Should list all genres' do
-      expect { Genre.list_all_genres }.to output(puts('"0 - Comedy"')).to_stdout
+      expect { Genre.list_all_genres }.to output(puts('"Comedy"')).to_stdout
     end
   end
 end
