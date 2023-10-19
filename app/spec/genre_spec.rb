@@ -1,10 +1,10 @@
-require_relative '../models/genre'
+require_relative '../models/genre/genre'
 require_relative '../models/item'
 require 'date'
 require 'securerandom'
 
 describe '#Genre' do
-  id = SecureRandom.hex(10)
+  SecureRandom.hex(10)
   let(:new_genre) { Genre.new('Fantasy') }
   let(:new_genre_item) { Genre.new('Comedy') }
   describe 'Initialize Genre with correct data' do

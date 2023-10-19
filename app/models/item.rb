@@ -2,7 +2,8 @@ require 'securerandom'
 require 'date'
 
 class Item
-  attr_reader :id, :publish_date, :archived, :label, :genre, :author, :source
+  attr_reader :id, :archived, :label, :genre, :author, :source
+  attr_accessor :publish_date
 
   def initialize(publish_date)
     @id = SecureRandom.hex(10)
