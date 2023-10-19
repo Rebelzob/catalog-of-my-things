@@ -5,14 +5,17 @@ require_relative 'models/game/options'
 require_relative 'models/game/save_load_game_author'
 require_relative 'models/game/game'
 require_relative 'models/game/author'
+require_relative 'models/display_methods'
 
 # require_relative 'user_data/source_data'
+
 # require_relative 'user_data/item_data'
 
 class App
   include AuthorData
   include GenreData
   include LabelData
+  include Display
   # include SourceData
   # include ItemData
   include Options
@@ -24,6 +27,8 @@ class App
     # author_data
     # genre_data
     # label_data
+    @labels = []
+    @books = []
     @games = load_games
     @authors = load_authors
     display_menu
