@@ -1,11 +1,11 @@
 def collect_movie_data
   print 'Add a title: '
-  title = gets.chomp
+  gets.chomp
 
   print 'Select a source: '
   Source.list_all_sources
   index = gets.chomp.to_i
-  source = Source.find_source_by_index(index)
+  Source.find_source_by_index(index)
 
   print 'Add a publish_date [YYYY-MM-DD]: '
   publish_date = gets.chomp
@@ -17,6 +17,6 @@ def collect_movie_data
   print 'Silent (y/n): '
   silent = gets.chomp.downcase == 'y'
 
-  #movie
+  # movie
   { publish_date: publish_date, silent: silent }
 end

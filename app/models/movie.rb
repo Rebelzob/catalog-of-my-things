@@ -13,11 +13,7 @@ class Movie < Item
     @silent = silent
   end
 
-  class << self
-    attr_reader :movies
-  end
-
-  def self.add_a_movie(data)
+  def self.add_a_movie(_data)
     @movies << self
 
     if @movies.nil?
@@ -34,7 +30,7 @@ class Movie < Item
   def self.list_all_movies
     loaded_movies = load_data('database/movie/json/movie_data.json')
     if loaded_movies.nil?
-      puts "The movie list is empty.\n\n"
+      puts "The movie list is has no record.\n\n"
     elsif loaded_movies.empty?
       puts "The movie list is empty. \n\n"
     else

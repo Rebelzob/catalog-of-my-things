@@ -20,19 +20,19 @@ describe Source do
 
     # list_all_sources
     it 'returns the correct list of all sources' do
-      sources = Source.list_all_sources
+      Source.list_all_sources
 
       output = puts('"1 - Youtube"')
       expect do
         Source.list_all_sources
-      end.to output(output).to_stdout  
+      end.to output(output).to_stdout
     end
 
     # find a source by index
     it 'returns the correct source based on the provided index' do
       source = Source.new('Youtube')
       Source.sources.push(source)
-      
+
       source_index = Source.find_source_by_index(0)
       expect(source_index.name).to eql('Youtube')
     end

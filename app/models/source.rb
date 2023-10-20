@@ -15,7 +15,7 @@ class Source
     # self.class.sources << self
   end
 
-  def self.add_a_source(source_data)
+  def self.add_a_source(_source_data)
     @sources << self
 
     if @sources.nil?
@@ -28,7 +28,7 @@ class Source
   def self.list_all_sources
     loaded_sources = load_data('database/source/json/source_data.json')
     if loaded_sources.nil?
-      puts "The source list is empty \n\n"
+      puts "The source list is has no record. \n\n"
     elsif loaded_sources.empty?
       puts "The source list is empty \n\n"
     else
