@@ -24,3 +24,18 @@ CREATE TABLE movie (
   silent BOOLEAN,
   PRIMARY KEY (id)
 );
+
+
+CREATE TABLE Games (
+  id INT PRIMARY KEY,
+  publish_date DATE,
+  multiplayer BOOLEAN,
+  last_played_at DATE,
+  FOREIGN KEY (id) REFERENCES item(id)
+);
+
+CREATE TABLE Authors (
+ id INT PRIMARY KEY,
+ first_name VARCHAR(255)
+ last_name VARCHAR(255),
+);
