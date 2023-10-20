@@ -6,6 +6,7 @@ require_relative 'models/display_methods'
 require_relative 'models/book/book_data'
 require_relative 'models/create_methods'
 # require_relative 'models/music_genre_file_manager/file_manager'
+require_relative 'UI/source_movie/app_source_movie'
 
 class App
   include Display
@@ -18,7 +19,7 @@ class App
     # musics = load_music
     # genres = load_genre
     # movies = load_movie
-    # sources = load_source
+    # sources = load_source || []
     @labels = load_labels || []
     @books = load_books || []
     @games = load_games
@@ -72,7 +73,7 @@ class App
     when 3
       list_of_games
     when 4
-      # List_all_movies
+      call_list_all_movies
     when 5
       display_list
     else
@@ -94,9 +95,9 @@ class App
     when 2
       list_of_labels
     when 3
-      # list_all_genres
+      list_all_genres
     when 4
-      # list_all_sources
+      call_list_all_sources
     when 5
       display_list
     else
@@ -121,6 +122,8 @@ class App
       add_game
     when 4
       # add_movie
+      call_list_add_a_movie
+
     when 5
       display_list
     else
