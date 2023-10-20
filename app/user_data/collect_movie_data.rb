@@ -12,7 +12,7 @@ def collect_movie_data
 
   print 'Add a archived (y/n): '
   archived_input = gets.chomp.downcase
-  archived = %w[true false].include?(archived_input)
+  %w[true false].include?(archived_input)
 
   print 'Silent (y/n): '
   silent = gets.chomp.downcase == 'y'

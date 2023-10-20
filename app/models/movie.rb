@@ -27,6 +27,10 @@ class Movie < Item
     end
   end
 
+  class << self
+    attr_reader :movies
+  end
+
   def self.list_all_movies
     loaded_movies = load_data('database/movie/json/movie_data.json')
     if loaded_movies.nil?
