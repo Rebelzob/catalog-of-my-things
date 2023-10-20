@@ -60,3 +60,24 @@ CREATE TABLE Labels (
 );
 
 CREATE INDEX idx_book_labels ON books(labels_id);
+
+-- Create the genre table structure:
+CREATE TABLE genre (
+   id INT GENERATED ALWAYS AS IDENTITY,
+   name VARCHAR (50),
+   item_id INT,
+   CONSTRAINT FK_ITEM_ID FOREIGN KEY (item_id) REFERENCES item(id),
+   PRIMARY KEY (id)
+);
+
+-- Create the music_albums table structure:
+CREATE TABLE music_albums (
+   id INT GENERATED ALWAYS AS IDENTITY,
+   genre VARCHAR(50),
+   author VARCHAR(50),
+   source VARCHAR(50),
+   label VARCHAR(50),
+   publish_date DATE,
+   on_spotify BOOLEAN,
+   PRIMARY KEY (id)
+);
