@@ -22,10 +22,10 @@ class Genre
   end
 
   class << self
-    attr_reader :genre_list
+    attr_accessor :genre_list
   end
 
   def self.list_all_genres
-    @genre_list.each_with_index { |genre, index| p "#{index} - #{genre.name}" }
+    @genre_list.each_with_index { |genre, index| print "#{index} - #{genre.name}\n" }
   end
 end
