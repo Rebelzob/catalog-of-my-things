@@ -5,7 +5,6 @@ require_relative '../../user_data/source_data'
 require_relative '../../database/movie/save_data'
 require_relative '../../database/source/save_data'
 
-
 def call_list_all_movies
   Movie.list_all_movies
 end
