@@ -15,23 +15,22 @@ class Source
     # self.class.sources << self
   end
 
-  def self.add_a_source(name)
-    source = Source.new(name)
-    @sources << source
+  def self.add_a_source(source_data)
+    @sources << self
 
-    if source.nil?
+    if @sources.nil?
       puts 'Invalid source data. Make sure all required attributes are provided.'
     else
-      puts "Source '#{name}' added successfully. \n\n"
+      puts "Source '#{name}' added successfully. \n"
     end
   end
 
   def self.list_all_sources
-    loaded_sources = load_data('data/source_data.json')
+    loaded_sources = load_data('database/source/json/source_data.json')
     if loaded_sources.nil?
-      puts 'Failed to load movie data.'
+      puts "The source list is empty \n\n"
     elsif loaded_sources.empty?
-      puts 'The source list is empty'
+      puts "The source list is empty \n\n"
     else
       puts "We have #{loaded_sources.length} sources. \n"
       loaded_sources.each_with_index do |source, index|
@@ -41,11 +40,16 @@ class Source
   end
 
   def self.find_source_by_index(index)
+    puts @sources
     @sources[index]
   end
 
   def add_item(item)
     @items << item
     item.add_source(self)
+  end
+
+  class << self
+    attr_reader :sources
   end
 end

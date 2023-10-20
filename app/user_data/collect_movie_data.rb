@@ -2,25 +2,10 @@ def collect_movie_data
   print 'Add a title: '
   title = gets.chomp
 
-  # print 'Select a genre: '
-  # Genre.list_all_genres
-  # index = gets.chomp
-  # movie_data[:genre] = Genre.find_genre_by_index(index)
-
-  # print 'Select an author: '
-  # Author.list_all_genres
-  # index = gets.chomp.to_i
-  # movie_data[:author] = Author.find_author_by_index(index)
-
   print 'Select a source: '
   Source.list_all_sources
   index = gets.chomp.to_i
   source = Source.find_source_by_index(index)
-
-  # print 'Select a label: '
-  # Label.list_all_labels
-  # index = gets.chomp
-  # movie_data[:label] = Label.find_label_by_index(index)
 
   print 'Add a publish_date [YYYY-MM-DD]: '
   publish_date = gets.chomp
@@ -32,5 +17,6 @@ def collect_movie_data
   print 'Silent (y/n): '
   silent = gets.chomp.downcase == 'y'
 
-  { title: title, source: source, publish_date: publish_date, archived: archived, silent: silent }
+  #movie
+  { publish_date: publish_date, silent: silent }
 end

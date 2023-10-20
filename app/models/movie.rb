@@ -8,32 +8,35 @@ class Movie < Item
 
   @movies = []
 
-  def initialize(_title, _source, _publish_date, _archived, silent)
-    super()
+  def initialize(publish_date, silent)
+    super(publish_date)
     @silent = silent
   end
 
-  def self.add_a_movie(title, source, publish_date, archived, silent)
-    movie = Movie.new(title, source, publish_date, archived, silent)
-    @movies << movie
+  class << self
+    attr_reader :movies
+  end
 
-    if movie.nil?
+  def self.add_a_movie(data)
+    @movies << self
+
+    if @movies.nil?
       puts 'Invalid movie data. Make sure all required attributes are provided.'
     else
-      puts "Movie '#{title}' added successfully. \n\n"
+      puts "Movie added successfully. \n"
     end
   end
 
   def self.list_all_movies
-    loaded_movies = load_data('data/movie_data.json')
+    loaded_movies = load_data('database/movie/json/movie_data.json')
     if loaded_movies.nil?
-      puts 'Failed to load movie data.'
+      puts "The movie list is empty.\n\n"
     elsif loaded_movies.empty?
-      puts 'The movie list is empty'
+      puts "The movie list is empty. \n\n"
     else
-      puts "We have Movie '#{loaded_movies.length}' movies. \n"
+      puts "We have Movie '#{loaded_movies.length}' movies. \n\n"
       loaded_movies.each_with_index do |movie, index|
-        puts "#{index + 1} - Title: #{movie['title']}, Pusbished on: #{movie['publish_date']}"
+        puts "#{index + 1} - Pusbished on: #{movie['publish_date']}"
       end
     end
   end

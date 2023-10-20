@@ -19,10 +19,12 @@ class Main
         Source.list_all_sources
       when '3'
         movie_data = collect_movie_data
-        Movie.add_a_movie(movie_data[:title], movie_data[:source], movie_data[:publish_date], movie_data[:archived],
-                          movie_data[:silent])
-        save_data(movie_data, 'data/movie_data.json')
+        Movie.add_a_movie(movie_data)
+        save_data(movie_data, 'database/movie/json/movie_data.json')
       when '4'
+        Source.add_a_source(source_data)
+        save_data(source_data, 'database/source/json/source_data.json')
+      when '5'
         exit
       else
         puts 'Invalid choice. Please try again.'
@@ -36,7 +38,8 @@ def options
   puts '1 - List all movies'
   puts '2 - List all sources'
   puts '3 - Add a movie'
-  puts '4 - Exit'
+  puts '4 - Add a source'
+  puts '5 - Exit'
   print 'Enter your choice: '
 end
 
