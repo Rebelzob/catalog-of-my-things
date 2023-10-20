@@ -23,7 +23,7 @@ class Main
         save_data(movie_data, 'database/movie/json/movie_data.json')
       when '4'
         Source.add_a_source(source_data)
-        save_data(source_data, 'database/source/json/source_data.json')
+        # save_data(source_data, 'database/source/json/source_data.json')
       when '5'
         exit
       else
