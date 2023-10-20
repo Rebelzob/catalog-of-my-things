@@ -13,6 +13,7 @@ CREATE TABLE source (
   name VARCHAR(50),
   item_id INT REFERENCES item(id)
 );
+
 CREATE INDEX idx_source_item_id ON source(item_id);
 
 CREATE TABLE movie (
@@ -24,7 +25,6 @@ CREATE TABLE movie (
   silent BOOLEAN,
   PRIMARY KEY (id)
 );
-
 
 CREATE TABLE Games (
   id INT PRIMARY KEY,
@@ -39,3 +39,24 @@ CREATE TABLE Authors (
  first_name VARCHAR(255)
  last_name VARCHAR(255),
 );
+
+CREATE TABLE books(
+  id INT GENERATED ALWAYS AS IDENTITY,
+  publish_date DATE NOT NULL,
+  archived BOOLEAN,
+  cover_state VARCHAR(150),
+  publisher VARCHAR(150),
+  book_color VARCHAR(50),
+  books_id INT,
+  PRIMARY KEY(id),
+  CONSTRAINT fk_labels FOREIGN KEY(books_id) REFERENCES labels(id)
+);
+
+CREATE TABLE Labels (
+  id INT PRIMARY KEY,
+  title VARCHAR(50),
+  color VARCHAR(50),
+  FOREIGN KEY (id) REFERENCES item(id)
+);
+
+CREATE INDEX idx_book_labels ON books(labels_id);
