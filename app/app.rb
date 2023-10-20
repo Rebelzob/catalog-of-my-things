@@ -18,8 +18,6 @@ class App
   def initialize
     # musics = load_music
     # genres = load_genre
-    # movies = load_movie
-    # sources = load_source || []
     @labels = load_labels || []
     @books = load_books || []
     @games = load_games
@@ -139,8 +137,6 @@ class App
   def handle_exit
     # save_music
     # save_genre
-    # save_movie
-    # save_source
     save_authors
     save_games
     save_books(@books)
