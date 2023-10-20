@@ -1,7 +1,8 @@
 <!-- TABLE OF CONTENTS -->
 
 # 📗 Table of Contents
-  - [Catalog-of-my-things 📚🎵🎮🎥](#about-project)
+  - [Catalog-of-my-things 📚🎵🎮🎥](#walkthrough)
+  - [Walkthrough video 🎥](##walkthrough-video)
   - [🛠 Built With](#built-with)
     - [Tech Stack](#tech-stack)
   - [💻 Getting Started](#getting-started)
@@ -21,6 +22,10 @@
 Catalog of my things is a simple console app that allows users to manage collections of the things they own: books, music albums, movies, and games. Everything is based on the UML class diagram presented below.
 
 ![catalog_of_my_things](https://github.com/Rebelzob/catalog-of-my-things/assets/129561152/16becdac-558c-4c1c-a61c-b3324a303c0b)
+
+## Walkthrough video 🎥<a name="#walkthrough-video"></a>
+
+[Link](https://www.youtube.com/watch?v=TlOYg0vVsqM)
 
 ## 🛠 Built With <a name="built-with"></a>
 
