@@ -1,4 +1,4 @@
-require_relative '../models/movie'
+require_relative '../models/movie/movie'
 
 describe Movie do
   context 'Given a provided movie' do

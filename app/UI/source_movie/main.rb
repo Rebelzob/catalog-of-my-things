@@ -1,5 +1,5 @@
-require_relative '../../models/movie'
-require_relative '../../models/source'
+require_relative '../../models/movie/movie'
+require_relative '../../models/source/source'
 require_relative '../../user_data/collect_movie_data'
 require_relative '../../user_data/source_data'
 require_relative '../../database/movie/save_data'

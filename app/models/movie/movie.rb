@@ -1,6 +1,6 @@
-require_relative 'item'
-require_relative '../user_data/collect_movie_data'
-require_relative '../database/movie/load_data'
+require_relative '../item'
+require_relative '../../user_data/collect_movie_data'
+require_relative '../../database/movie/load_data'
 
 class Movie < Item
   attr_reader :id
@@ -8,7 +8,7 @@ class Movie < Item
 
   @movies = []
 
-  def initialize(publish_date, silent)
+  def initialize(publish_date, title, silent)
     super(publish_date)
     @silent = silent
   end
@@ -28,7 +28,7 @@ class Movie < Item
   end
 
   def self.list_all_movies
-    loaded_movies = load_data('database/movie/json/movie_data.json')
+    loaded_movies = load_data('app/database/movie/json/movie_data.json')
     if loaded_movies.nil?
       puts "The movie list is has no record.\n\n"
     elsif loaded_movies.empty?

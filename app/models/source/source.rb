@@ -1,6 +1,6 @@
 require 'securerandom'
-require_relative '../user_data/source_data'
-require_relative '../database/source/load_data'
+require_relative '../../user_data/source_data'
+require_relative '../../database/source/load_data'
 
 class Source
   attr_reader :id, :items
@@ -26,7 +26,7 @@ class Source
   end
 
   def self.list_all_sources
-    loaded_sources = load_data('database/source/json/source_data.json')
+    loaded_sources = load_data('app/database/source/json/source_data.json')
     if loaded_sources.nil?
       puts "The source list is has no record. \n\n"
     elsif loaded_sources.empty?
