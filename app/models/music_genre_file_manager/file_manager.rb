@@ -1,5 +1,6 @@
 require 'json'
-require_relative 'genre'
+require_relative '../genre/genre'
+require_relative '../music/music'
 
 class FileManager
   attr_accessor :genres, :musics, :files
@@ -29,7 +30,6 @@ class FileManager
     json_to_str = File.read(GENRES_PATH)
     @genres = JSON.parse(json_to_str).map do |genre_data|
       genres = Genre.new(genre_data['name'])
-      genres.id = genre_data['id']
       genres
     end
   rescue StandardError => e
@@ -44,7 +44,6 @@ class FileManager
       music = MusicAlbum.new(nil, nil)
       music.on_spotify = music_data['on_spotify']
       music.publish_date = music_data['publish_date']
-      music.id = music_data['id']
       music
     end
   rescue StandardError => e
