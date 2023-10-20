@@ -81,13 +81,18 @@ class App
     end
   end
 
-  def list_categories
+  def categories_options
     puts " \n Select an option:"
     puts '1) List all Authors'
     puts '2) List all Labels'
     puts '3) List all Genres'
     puts '4) List all Sources'
     puts '5) Go back to Main Menu'
+  end
+
+  def list_categories
+    categories_options
+
     option = gets.chomp.to_i
     case option
     when 1

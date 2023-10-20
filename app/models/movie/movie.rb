@@ -8,7 +8,7 @@ class Movie < Item
 
   @movies = []
 
-  def initialize(publish_date, title, silent)
+  def initialize(publish_date, _title, silent)
     super(publish_date)
     @silent = silent
   end
