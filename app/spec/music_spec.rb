@@ -20,12 +20,12 @@ describe '#MusicAlbum' do
   describe '#add_music_album' do
     it 'MusicAlbum object should add new music to music_list property' do
       id = SecureRandom.hex(10)
-      music = MusicAlbum.new(true, Date.parse('15-10-2023'))
+      music = MusicAlbum.new(true, Date.parse('2023-10-15'))
       music.add_author(Author.new('Bruno', 'Kambere'))
       music.add_label(Label.new('Dunot', 'Red'))
       music.add_source(double(id: id, name: 'Source', items: []))
       music.add_music_album
-      output = puts('"0 - [MusicAlbum], Bruno, Dunot, Source, 2023-10-15"')
+      output = puts('"0 - publish date: 2023-10-15, on spotify: true"')
       expect do
         MusicAlbum.list_all_music_albums
       end.to output(output).to_stdout

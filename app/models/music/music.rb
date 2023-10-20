@@ -15,16 +15,14 @@ class MusicAlbum < Item
   end
 
   class << self
-    attr_reader :music_list
+    attr_accessor :music_list
   end
 
   def self.list_all_music_albums
     @music_list.each_with_index do |music, index|
-      author_name = music.author.first_name
-      label_title = music.label.title
-      source_name = music.source.name
+      on_spotify = music.on_spotify
       pub_date = music.publish_date
-      p "#{index} - [#{name}], #{author_name}, #{label_title}, #{source_name}, #{pub_date}"
+      print "#{index} - publish date: #{pub_date}, on spotify: #{on_spotify}\n"
     end
   end
 
