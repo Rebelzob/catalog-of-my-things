@@ -1,6 +1,6 @@
 def collect_movie_data
   print 'Add a title: '
-  gets.chomp
+  title = gets.chomp
 
   print 'Select a source: '
   Source.list_all_sources
@@ -18,5 +18,5 @@ def collect_movie_data
   silent = gets.chomp.downcase == 'y'
 
   # movie
-  { publish_date: publish_date, silent: silent }
+  { publish_date: publish_date, title: title, silent: silent }
 end

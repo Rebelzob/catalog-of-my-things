@@ -36,7 +36,7 @@ class Movie < Item
     else
       puts "We have Movie '#{loaded_movies.length}' movies. \n\n"
       loaded_movies.each_with_index do |movie, index|
-        puts "#{index + 1} - Pusbished on: #{movie['publish_date']}"
+        puts "#{index + 1} - Title: #{movie['title']}, Pusbished on: #{movie['publish_date']}"
       end
     end
   end
