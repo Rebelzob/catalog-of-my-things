@@ -3,7 +3,7 @@ require_relative '../models/movie/movie'
 describe Movie do
   context 'Given a provided movie' do
     # params: title, source, publish_date, archived, silent
-    movie = Movie.new('1997-12-31', true)
+    movie = Movie.new('1997-12-31', 'Titanic', true)
 
     # initialize
     it 'Created the movie with the correct parameters' do
@@ -13,7 +13,7 @@ describe Movie do
 
     # add_a_movie
     it "returns the movie's correct publish_date and silent status" do
-      new_movie = Movie.new('2010-07-16', false)
+      new_movie = Movie.new('2010-07-16', 'Mowgli', false)
 
       expect(new_movie.publish_date).to eql('2010-07-16')
       expect(new_movie.silent).to eql(false)
@@ -31,7 +31,7 @@ describe Movie do
 
     # find a movie by index
     it 'finds the correct movie by index' do
-      movie = Movie.new('2023-10-20', true)
+      movie = Movie.new('2023-10-20', 'Shrek', true)
       Movie.movies.push(movie)
 
       movie_index = Movie.find_movie_by_index(0)
