@@ -5,7 +5,7 @@ require_relative 'models/game/author'
 require_relative 'models/display_methods'
 require_relative 'models/book/book_data'
 require_relative 'models/create_methods'
-#require_relative 'models/music_genre_file_manager/file_manager'
+# require_relative 'models/music_genre_file_manager/file_manager'
 
 class App
   include Display
@@ -68,12 +68,12 @@ class App
     when 1
       list_of_books
     when 2
-      #list_all_music_albums
+      # list_all_music_albums
     when 3
       list_of_games
     when 4
-      #List_all_movies
-    when 5 
+      # List_all_movies
+    when 5
       display_list
     else
       puts 'Please select a valid option'
@@ -94,9 +94,9 @@ class App
     when 2
       list_of_labels
     when 3
-      #list_all_genres
+      # list_all_genres
     when 4
-      #list_all_sources
+      # list_all_sources
     when 5
       display_list
     else
@@ -116,18 +116,18 @@ class App
     when 1
       menu_create_book
     when 2
-      #add_music_album
+      # add_music_album
     when 3
       add_game
     when 4
-      #add_movie
+      # add_movie
     when 5
       display_list
     else
       puts 'Please select a valid option'
     end
   end
-  
+
   def handle_exit
     # save_music
     # save_genre
@@ -140,5 +140,4 @@ class App
     puts 'Thank you for using this app!'
     exit
   end
-
 end
